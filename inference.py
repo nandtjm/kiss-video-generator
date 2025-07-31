@@ -12,8 +12,11 @@ DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 pipe = WanImageToVideoPipeline.from_pretrained(
     "Wan-AI/Wan2.2-TI2V-5B-Diffusers",
     torch_dtype=torch.float16,
-    cache_dir="/workspace/models"
+    cache_dir="/workspace/models",
+    low_cpu_mem_usage=False,
+    ignore_mismatched_sizes=True
 )
+
 pipe = pipe.to(DEVICE)
 pipe.enable_attention_slicing()
 pipe.load_lora_weights("Remade-AI/kissing", bias="none", use_safetensors=True)
