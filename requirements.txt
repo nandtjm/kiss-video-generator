@@ -7,3 +7,4 @@ accelerate
 imageio-ffmpeg
 opencv-python
 realesrgan
+diffusers 
