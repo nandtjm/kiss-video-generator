@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pillow
+torch
+diffusers
+accelerate
+imageio-ffmpeg
+opencv-python
+realesrgan
